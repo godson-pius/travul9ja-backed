@@ -12,7 +12,11 @@ connectDb();
 
 // MIDDLEWARES
 app.use(express.json())
-app.use('/api/users', require('./routes/userRoutes'))
+app.use('/api/v1/users', require('./routes/userRoutes'))
+app.use('/api/v1/agency', require('./routes/agencyRoutes'))
+app.use('/api/v1/bus', require('./routes/busRoutes'))
+app.use('/api/v1/booking', require('./routes/bookingRoutes'))
+app.use('/api/v1/payment', require('./routes/paymentRoutes'))
 app.use(errorHandler)
 
 
