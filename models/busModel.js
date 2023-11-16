@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const busSchema = mongoose.Schema({
     agencyId: {
         type: String,
-        required: [true, 'Agency is required']
+        required: [true, 'Agency is required'],
     },
 
     plateNumber: {

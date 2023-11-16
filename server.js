@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express')
+const cors = require('cors')
 const { connectDb } = require('./config/connect')
 const { errorHandler } = require('./middleware/errorHandler')
 const app = express()
@@ -12,6 +13,7 @@ connectDb();
 
 // MIDDLEWARES
 app.use(express.json())
+app.use(cors())
 app.use('/api/v1/users', require('./routes/userRoutes'))
 app.use('/api/v1/agency', require('./routes/agencyRoutes'))
 app.use('/api/v1/bus', require('./routes/busRoutes'))
